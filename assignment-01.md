@@ -95,9 +95,13 @@ def longest_run(myarray, key)
 ```
 E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`  
  
-  - 3a. (7 pts) First, implement an iterative, sequential version of `longest_run` in `main.py`.  
+  - 3a. (7 pts) First, implement an iterative, sequential version of `longest_run` in `main.py`. 
+
+
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
+  The work is O(n) since we iterate through the entire array.
+The span is also O(n) since each iteration takes constant time.
 
 .  
 .  
@@ -112,7 +116,12 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3c. (7 pts) Next, implement a `longest_run_recursive`, a recursive, divide and conquer implementation. This is analogous to our implementation of `sum_list_recursive`. To do so, you will need to think about how to combine partial solutions from each recursive call. Make use of the provided class `Result`.   
 
+
+
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
+  
+  The work is O(n log n), since we split the array in half at each level of recursion and process each half independently.
+The span is O(log n), since each level of recursion takes constant time and we make O(log n) recursive calls.
 .  
 .  
 .  
@@ -127,6 +136,9 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
+
+  The work is the same as the sequential recursive implementation, which is O(n log n).
+The span is O(log^2 n), since each level of recursion takes O(log n) time, and there are O(log n) levels of recursion. At each level of recursion, we make two branches, so the total span is O(log^2 n).
 
 .  
 .  
